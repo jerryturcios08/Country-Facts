@@ -13,6 +13,7 @@ class DetailScreen: UIViewController {
     @IBOutlet var flagWebView: WKWebView!
     @IBOutlet var tableView: UITableView!
 
+    // DetailRow struct contains key-value items for the table view
     struct DetailRow {
         var key: String
         var value: String
@@ -20,7 +21,6 @@ class DetailScreen: UIViewController {
 
     var country: Country?
     var details = [DetailRow]()
-    //    var details = Dictionary<String, Any>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
