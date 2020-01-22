@@ -56,7 +56,7 @@ class HomeScreen: UIViewController {
 
                             // If there is a symbol for the currency, it is included in the string
                             if let currencySymbol = currencyBlock[0]["symbol"] as? String {
-                                currency = "\(currencySymbol)  -  \(currencyName)"
+                                currency = "\(currencySymbol) (\(currencyName))"
                             } else {
                                 currency = "\(currencyName)"
                             }
@@ -106,17 +106,15 @@ class HomeScreen: UIViewController {
 
 extension HomeScreen: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
-            searching = false
-            view.endEditing(true)
-            tableView.reloadData()
-        } else {
-            filteredCountries = countries.filter({ country -> Bool in
-                country.name.lowercased().prefix(searchText.count) == searchText.lowercased()
-            })
-            searching = true
-            tableView.reloadData()
-        }
+        filteredCountries = countries.filter({ country -> Bool in
+            country.name.lowercased().prefix(searchText.count) == searchText.lowercased()
+        })
+        searching = true
+        tableView.reloadData()
+    }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
     }
 }
 
