@@ -31,6 +31,12 @@ class DetailScreen: UIViewController {
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(shareCountryFact)
+        )
+
         if let country = country {
             title = country.name
 
@@ -64,6 +70,30 @@ class DetailScreen: UIViewController {
         }
 
         tableView.reloadData()
+    }
+
+    @objc func shareCountryFact() {
+        let randomCountryFact: String
+        let randomArrayRange = 1...5
+        guard let randomInteger = randomArrayRange.randomElement() else { return }
+
+        // Selects a random fact about the country for the activity controller using
+        // an integer from a range between 1 to 5
+        switch randomInteger {
+        case 1:
+            randomCountryFact = "Did you know that the capital of \(country!.name) is \(country!.capital)?"
+        case 2:
+            randomCountryFact = "Did you know that the region for \(country!.name) is \(country!.region)?"
+        case 3:
+            randomCountryFact = "Did you know that the subregion for \(country!.name) is \(country!.subregion)?"
+        case 4:
+            randomCountryFact = "Did you know that the population of \(country!.name) is roughly \(details[randomInteger].value)?"
+        default:
+            randomCountryFact = "Did you know that the currency of \(country!.name) is \(country!.currency)?"
+        }
+
+        let vc = UIActivityViewController(activityItems: [randomCountryFact], applicationActivities: [])
+        present(vc, animated: true)
     }
 }
 
