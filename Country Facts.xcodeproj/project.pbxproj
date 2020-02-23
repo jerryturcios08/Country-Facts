@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C60401FD2401DF09009CA605 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60401FC2401DF09009CA605 /* NetworkManager.swift */; };
 		C6BCA78823D764C6004C51A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BCA78723D764C6004C51A5 /* AppDelegate.swift */; };
 		C6BCA78A23D764C6004C51A5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BCA78923D764C6004C51A5 /* SceneDelegate.swift */; };
 		C6BCA78C23D764C6004C51A5 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BCA78B23D764C6004C51A5 /* HomeScreen.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C60401FC2401DF09009CA605 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C6BCA78423D764C6004C51A5 /* Country Facts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Country Facts.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6BCA78723D764C6004C51A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C6BCA78923D764C6004C51A5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C60401FB2401DEFB009CA605 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C60401FC2401DF09009CA605 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		C6BCA77B23D764C6004C51A5 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +72,7 @@
 		C6BCA78623D764C6004C51A5 /* Country Facts */ = {
 			isa = PBXGroup;
 			children = (
+				C60401FB2401DEFB009CA605 /* Managers */,
 				C6BCA79F23D76600004C51A5 /* Models */,
 				C6BCA79E23D765F8004C51A5 /* Screens */,
 				C6BCA79D23D765F2004C51A5 /* Storyboards */,
@@ -190,6 +201,7 @@
 				C6BCA79C23D7655E004C51A5 /* Country.swift in Sources */,
 				C6BCA78C23D764C6004C51A5 /* HomeScreen.swift in Sources */,
 				C6BCA78823D764C6004C51A5 /* AppDelegate.swift in Sources */,
+				C60401FD2401DF09009CA605 /* NetworkManager.swift in Sources */,
 				C6BCA78A23D764C6004C51A5 /* SceneDelegate.swift in Sources */,
 				C6BCA7AD23D78DF2004C51A5 /* DetailScreen.swift in Sources */,
 				C6BCA7AB23D7809D004C51A5 /* UIImageView+Ext.swift in Sources */,
